@@ -8,7 +8,7 @@ def validate_email(email):
     :return: bool - True if valid, False otherwise
     """
     # Define the regex pattern for a valid email address
-    pattern = r'^[a-zA-Z0-9_.±]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'
+    pattern = r'([a-zA-Z0-9_.±]+)@([a-zA-Z0-9-]+).([a-zA-Z0-9-.]+)$'
     # pattern = r'^(?:(?!.*?[.]{2})[a-zA-Z0-9](?:[a-zA-Z0-9.+!%-]{1,64}|)|\"[a-zA-Z0-9.+!% -]{1,64}\")@[a-zA-Z0-9][a-zA-Z0-9.-]+(.[a-z]{2,}|.[0-9]{1,})$'
     # Use re.match to check if the email matches the pattern
     return bool(re.match(pattern, email))
@@ -22,7 +22,7 @@ def validate_phone(phone):
     :return: bool - True if valid, False otherwise
     """
     # Define the regex pattern for a valid phone number
-    pattern = r'^\+359[1-9][0-9]{7,8}$'
+    pattern = r'(\+359)(\d{3})(\d{3})(\d{3})'
     # Use re.match to check if the phone matches the pattern
     return bool(re.match(pattern, phone))
 
@@ -35,7 +35,7 @@ def validate_postal_code(postal_code):
     :return: bool - True if valid, False otherwise
     """
     # Define the regex pattern for a valid postal code
-    pattern = r'^\d{4}$'
+    pattern = r'(\d{4})'
     # Use re.match to check if the postal code matches the pattern
     return bool(re.match(pattern, postal_code))
 
